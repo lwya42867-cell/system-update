@@ -1,5 +1,6 @@
-apply plugin: 'com.android.application'
-
+plugins {
+    id 'com.android.application'
+}
 android {
     namespace 'com.sys.update'
     compileSdk 34
@@ -14,8 +15,11 @@ android {
         release { minifyEnabled false }
         debug { minifyEnabled false }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            res.srcDirs = ['src/main/res']
+        }
     }
 }

@@ -15,6 +15,8 @@ jobs:
         with:
           gradle-version: '8.2'
           cache-disabled: true
+      - name: Print Files
+        run: find app/src -type f
       - name: Build APK
         run: gradle assembleDebug
       - name: Upload APK
